@@ -11,10 +11,40 @@
 <body>
     <main>
         <h1>Tic Tac Toe</h1>
+
+        <!-- Mode Selector: Switch between PvP and AI modes -->
+        <div class="mode-container">
+            <button class="mode-btn active" data-mode="pvp">2 Players</button>
+            <button class="mode-btn" data-mode="ai-easy">AI (Easy)</button>
+            <button class="mode-btn" data-mode="ai-hard">AI (Unbeatable)</button>
+        </div>
+
+        <!-- Scoreboard: Persists wins and draws in localStorage -->
+        <div class="scoreboard">
+            <div class="score-card">
+                <span class="score-label" id="label-x">Player (X)</span>
+                <span class="score-val" id="score-x">0</span>
+            </div>
+            <div class="score-card">
+                <span class="score-label">Ties</span>
+                <span class="score-val" id="score-ties">0</span>
+            </div>
+            <div class="score-card">
+                <span class="score-label" id="label-o">Player (O)</span>
+                <span class="score-val" id="score-o">0</span>
+            </div>
+        </div>
+
+        <!-- Turn Status Indicator -->
+        <p class="turn-indicator" id="turn-indicator">Turn: X</p>
+
+        <!-- Result / Winner banner -->
         <div class="result hide">
             <p id="msg"></p>
-            <button class="reset-btn">New Game</button>
+            <button class="reset-btn" id="new-game-btn">New Game</button>
         </div>
+
+        <!-- 3x3 Game Board Grid -->
         <div class="container">
             <div class="game">
                 <button class="box"></button>
@@ -28,7 +58,12 @@
                 <button class="box"></button>
             </div>
         </div>
-        <button class="reset-btn">Reset Game</button>
+
+        <!-- Control Buttons -->
+        <div class="controls">
+            <button class="reset-btn" id="reset-game-btn">Reset Game</button>
+            <button class="reset-btn secondary-btn" id="reset-score-btn">Reset Scores</button>
+        </div>
     </main>
 
     <script src="script.js"></script>
