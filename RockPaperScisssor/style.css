@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
@@ -8,6 +8,30 @@ body {
 }
 
 h1 {
+    padding: 20px;
     background-color: black;
     color: white;
+}
+
+
+
+.choices {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.choice:hover {
+    cursor: pointer;
+    background-color: black;
+    border-radius: 50%;
 }
