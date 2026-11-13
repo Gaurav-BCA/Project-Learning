@@ -45,20 +45,59 @@ img {
     border-radius: 50%;
 }
 
+
 .score-card {
-    margin-top: 3rem;
+    margin: 3rem auto;        /*ऊपर-नीचे 3rem जगह और auto बॉक्स को बीच (center) में रखने के लिए */
+    width: fit-content;       /* बॉर्डर को सिर्फ कंटेंट की चौड़ाई तक सीमित रखने के लिए */
+    padding: 1.5rem 2.5rem;   /* बॉर्डर और कंटेंट के बीच चारों तरफ बराबर जगह बनाने के लिए */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-    font-size: 2rem;
+    gap: 2.5rem;
+    border: 2px solid black;
+    border-radius: 10px;      /* (वैकल्पिक) कोनों को हल्का गोल करने के लिए */
+}
+/* हर स्कोर बॉक्स (You, Draw, Comp) के बीच वर्टिकल लाइन लगाने के लिए */
+.score-card > div:not(:last-child) {
+    border-right: 2px solid black;
+    padding-right: 2.5rem;    /* यह वैल्यू ऊपर दिए गए gap के बराबर होनी चाहिए */
 }
 
-#user-score,
+
+/* #user-score,
+#draw-score,
 #comp-score {
     font-weight: 500;
     font-size: 3rem;
+} */
+
+/* तीनों बॉक्स के सिर्फ नंबरों (पहला <p> टैग) को एक साथ स्टाइल करने के लिए */
+.score p:first-child {
+    font-size: 3rem;      /* नंबरों को बड़ा दिखाने के लिए */
+    font-weight: 500;      /* नंबरों को मोटा (bold) करने के लिए */
 }
+
+/* तीनों बॉक्स के नीचे लिखे नामों (You, Draw, Comp) को स्टाइल करने के लिए */
+.score p:last-child {
+    font-size: 2rem;      /* नाम का साइज थोड़ा छोटा रखने के लिए */
+}
+
+
+.score {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* जीतने वाले बॉक्स का हल्का हरा बैकग्राउंड */
+.win-highlight {
+    background-color: #c9e3cf;
+    color: #155724;
+}
+
+/* (वैकल्पिक) मैच ड्रॉ होने पर हल्का पीला बैकग्राउंड */
+.draw-highlight {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
 
 .result {
     margin-top: 2.5rem;
