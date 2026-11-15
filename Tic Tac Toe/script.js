@@ -111,7 +111,7 @@ let scoreTiesEl = document.querySelector("#score-ties");
 let labelO = document.querySelector("#label-o");
 let resetScoreBtn = document.querySelector("#reset-score-btn");
 
-// 2. WINNING PATTERNS (The same 8 winning lines as your original code)
+// 2. WINNING PATTERNS
 const winPatterns = [
     [0, 1, 2], // Top row
     [3, 4, 5], // Middle row
